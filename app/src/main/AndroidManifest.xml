@@ -5,6 +5,10 @@
     <!-- Step 2 — Add Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Part 6 — Use Current Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

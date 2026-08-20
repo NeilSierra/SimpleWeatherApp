@@ -20,6 +20,14 @@
         android:layout_marginTop="12dp"
         android:text="Get Weather" />
 
+    <!-- Part 6 — Use Current Location -->
+    <Button
+        android:id="@+id/btnUseLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Use Current Location" />
+
     <TextView
         android:id="@+id/tvCityResult"
         android:layout_width="wrap_content"
