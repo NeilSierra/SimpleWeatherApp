@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:gravity="center">
 
     <EditText
         android:id="@+id/etCityName"
@@ -13,21 +13,30 @@
         android:layout_height="wrap_content"
         android:hint="Enter city name" />
 
-    <Button
-        android:id="@+id/btnGetWeather"
-        android:layout_width="wrap_content"
+    <!-- Horizontal container to hold both buttons in one row -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Get Weather" />
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
 
-    <!-- Part 6 — Add a “Use Current Location” button using FusedLocationProviderClient -->
-    <!-- Added new button for use current location -->
-    <Button
-        android:id="@+id/btnUseLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Use Current Location" />
+        <Button
+            android:id="@+id/btnGetWeather"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="Get Weather" />
+
+        <Button
+            android:id="@+id/btnUseLocation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="Use Current Location" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvCityResult"
