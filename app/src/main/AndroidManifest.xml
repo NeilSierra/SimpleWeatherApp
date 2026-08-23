@@ -5,7 +5,8 @@
     <!-- Step 2 — Add Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- Part 6 — Use Current Location -->
+    <!-- Part 6 — Add a “Use Current Location” button using FusedLocationProviderClient -->
+    <!-- Added the needed permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 

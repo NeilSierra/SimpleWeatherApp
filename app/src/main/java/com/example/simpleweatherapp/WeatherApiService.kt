@@ -17,7 +17,8 @@ interface WeatherApiService {
         @Query("units") units: String = "metric"
     ): WeatherResponse
 
-    // Part 6 — Use Current Location
+    // Part 6 — Add a “Use Current Location” button using FusedLocationProviderClient
+    // New function for the use current location button
     @GET("data/2.5/weather")
     suspend fun getWeatherByLocation(
         @Query("lat") lat: Double,

@@ -1,23 +1,26 @@
 package com.example.simpleweatherapp
 
 // Step 9 — MainActivity
-import android.Manifest // NEW: for permission constants
-import android.content.pm.PackageManager // NEW: for permission check result
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts // NEW: for the permission request launcher
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat // NEW: for checking permission status
 import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.location.FusedLocationProviderClient // NEW: location client
-import com.google.android.gms.location.LocationServices // NEW: to build the location client
-import com.google.android.gms.location.Priority // NEW: accuracy/power priority for location requests
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await // NEW: lets us await a Task<Location> inside a coroutine
-import android.annotation.SuppressLint // NEW: needed for the suppress annotation
+
+// Part 6 — Add a “Use Current Location” button using FusedLocationProviderClient
+// Added needed imports for the main activity
+import android.Manifest                                             // For permission constants
+import android.content.pm.PackageManager                            // For permission check result
+import androidx.activity.result.contract.ActivityResultContracts    // For the permission request launcher
+import androidx.core.content.ContextCompat                          // For checking permission status
+import com.google.android.gms.location.FusedLocationProviderClient  // Location client
+import com.google.android.gms.location.LocationServices             // To build the location client
+import com.google.android.gms.location.Priority                     // Accuracy/power priority for location requests
+import kotlinx.coroutines.tasks.await                               // Lets us await a Task<Location> inside a coroutine
+import android.annotation.SuppressLint                              // Needed for the suppress annotation
 
 class MainActivity : AppCompatActivity() {
 
