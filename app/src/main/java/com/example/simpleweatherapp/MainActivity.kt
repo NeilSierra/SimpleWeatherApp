@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
 
     private val apiKey = "35211ba0aff001e1a5351ccb1862d078"
 
-    // NEW: location client + TextViews promoted to class properties so both
-    // the city-search flow and the location flow can update them
+    // Location client + TextViews promoted to class properties so both
+    // The city-search flow and the location flow can update them
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var tvCityResult: TextView
     private lateinit var tvTemperature: TextView
     private lateinit var tvDescription: TextView
 
-    // NEW: handles the result of the runtime permission dialog
+    // Handles the result of the runtime permission dialog
     private val locationPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) {
@@ -47,14 +47,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // NEW: initialize the fused location provider client
+        // Initialize the fused location provider client
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val etCityName = findViewById<EditText>(R.id.etCityName)
         val btnGetWeather = findViewById<Button>(R.id.btnGetWeather)
         val btnUseLocation = findViewById<Button>(R.id.btnUseLocation) // NEW: the "Use Current Location" button
 
-        // NEW: these were local `val`s before; now assigned to class properties (declared above)
+        // These were local `val`s before; now assigned to class properties (declared above)
         tvCityResult = findViewById(R.id.tvCityResult)
         tvTemperature = findViewById(R.id.tvTemperature)
         tvDescription = findViewById(R.id.tvDescription)
@@ -98,13 +98,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // NEW: "Use Current Location" button click listener
+        // "Use Current Location" button click listener
         btnUseLocation.setOnClickListener {
             checkPermissionAndFetchLocation()
         }
     }
 
-    // NEW: checks if location permission is already granted; requests it if not
+    // Checks if location permission is already granted; requests it if not
     private fun checkPermissionAndFetchLocation() {
         val hasPermission = ContextCompat.checkSelfPermission(
             this,
@@ -118,8 +118,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // NEW: fetches the device's current location, then calls the weather API
-    // using lat/lon instead of a city name
+    // Fetches the device's current location, then calls the weather API
+    // Using lat/lon instead of a city name
     @SuppressLint("MissingPermission") // NEW: safe here — permission is verified before this is ever called
     private fun fetchCurrentLocationWeather() {
         lifecycleScope.launch {
